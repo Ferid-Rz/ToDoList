@@ -1,4 +1,8 @@
 <?php foreach($posts as $post) { ?>
+
+  <a href='?controller=post&action=sortPost&by=title'>Sort by Name</a> &nbsp; &nbsp;
+  <a href='?controller=post&action=sortPost&by=date'>Sort by Date</a> &nbsp;
+   
   <p>
     Name: <h3><?php echo $post['title']; ?></h3>
      

@@ -50,6 +50,16 @@ class PostController {
 
             require_once('views/post/read.php');
     }
+
+    public function sortPost() {
+
+      $posts = Post::sort();
+      // die('vv');
+      require_once('views/post/read.php');
+    }
+
+
+
       
 }
 

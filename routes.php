@@ -14,7 +14,7 @@
 
 
 $controllers = array('pages' => ['home'],
-                    'post' => ['read','create','update','delete'],
+                    'post' => ['read','create','update','delete','sortPost'],
                     );
 
 

@@ -86,6 +86,24 @@
       $stmt->close();
       $conn->close();
    }
+
+   public static function sort() {
+
+    $conn = new mysqli(servername, username, password, dbname);
+
+    $sorting = $_GET['by'];
+    $stmt = $conn->prepare("SELECT id,title,content,date FROM Post ORDER BY $sorting ");
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    while($row = $result->fetch_row()) {
+      $arr[]=array('id'=>$row['0'], 'title'=>$row['1'], 'content'=>$row['2'], 'date'=>$row['3']);
+    }
+    $stmt->close();
+    $conn->close();
+
+    return $arr;
+  }
   
 }
 ?>
