@@ -9,8 +9,8 @@
   </head>
   <body>
     <header class="w3-container w3-gray">
-      <a href='#'>Main</a>
-      <a href='#'>Posts</a>
+      <a href='?controller=post&action=read'>List of Posts</a>
+      <a href='#'>Add Post</a>
     </header>
 <div class="w3-container w3-cyan">
     <?php require_once('routes.php'); ?>
