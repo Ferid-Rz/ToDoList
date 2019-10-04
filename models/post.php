@@ -1,7 +1,6 @@
 <?php
   class Post {
 
-
     public $id;
     public $title;
     public $content;
@@ -13,7 +12,7 @@
       $this->content = $content;
       $this->date = $date;
     }
-
+    
     public static function all() {
 
       $conn = new mysqli(servername, username, password, dbname);
@@ -42,7 +41,20 @@
     }
     
     public static function add() {
+
+      $title   = $_POST['title'];
+      $content = $_POST['content'];
+      $date    = $_POST['date'];
+      $date = date("Y-d-m", strtotime($date));
+
+      $conn = new mysqli(servername, username, password, dbname);
    
+      $stmt = $conn->prepare("INSERT INTO Post (title, content, date) VALUES (?, ?, ?)");
+      $stmt->bind_param("sss", $title, $content, $date);
+      $stmt->execute();
+
+      $stmt->close();
+      $conn->close();
     }
 
 

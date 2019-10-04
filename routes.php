@@ -3,18 +3,11 @@
 
     require_once('controllers/' . $controller . '_controller.php');
 
-    switch($controller) {
-        case 'pages':
-            $controller = new PagesController();
-        break;
 
-        default:
+    require_once("models/{$controller}.php");
+    $controllerClassName = $controller . 'Controller';
+    $controller = new $controllerClassName();
 
-        require_once("models/{$controller}.php");
-        $controllerClassName = $controller . 'Controller';
-        $controller = new $controllerClassName();
-        break;
-    }
 
     $controller->{ $action }();
   }
