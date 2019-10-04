@@ -5,8 +5,8 @@
     <p>Content: <?php echo $post['content']; ?> </p>
     <p>Date: <?php echo $post['date']; ?> </p>
 
-    <a href='#'>Update Post</a> &nbsp; &nbsp;
-    <a href='#'>Delete Post</a> &nbsp;
+    <a href='?controller=post&action=update&id=<?php echo $post['id']; ?>'>Update Post</a> &nbsp; &nbsp;
+    <a href='?controller=post&action=delete&id=<?php echo $post['id']; ?>'>Delete Post</a> &nbsp;
     <hr>
   </p>
 <?php } ?>

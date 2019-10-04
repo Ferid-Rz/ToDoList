@@ -28,13 +28,14 @@ class PostController {
         return call('pages');
 
 
-        $posts = Post::find($_GET['id']);
-      
+        $post = Post::find($_GET['id']);
+
         require_once('views/post/update.php');
         }
       else
           { 
             $id = $_GET['id'];
+            echo $id;
             Post::update($id);
                         
             $posts = Post::all();
@@ -46,6 +47,7 @@ class PostController {
             Post::remove($_GET['id']);
             
             $posts = Post::all();
+
             require_once('views/post/read.php');
     }
       
